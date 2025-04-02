@@ -1,5 +1,11 @@
 # JF To-Do List App
 
+## Project Overview
+
+**JF To-Do List App** is a simple web application built with Flask that allows users to manage their tasks efficiently. It includes features such as user authentication (signup, login, logout), a dashboard to view tasks, and a responsive design styled with Bootstrap. The app is designed to demonstrate the integration of Flask with MySQL, secure password handling, and dynamic web page rendering.
+
+---
+
 ## Features
 
 - User authentication (Signup, Login, Logout)
@@ -41,7 +47,7 @@
 ## Folder Structure
 
 ```
-SEN_311/
+JF-ToDoList-App/
 ├── app.py                 # Main Flask application
 ├── templates/             # HTML templates
 │   ├── index.html
@@ -65,10 +71,15 @@ SEN_311/
 
 ---
 
+## Notes
+
+- Ensure MySQL is running before launching the app. you can setup a local server using Xampp.
+- If you encounter database issues, verify the mySQLdbsetup.sql script was executed properly.
+
+## License
+
+This project is for educational purposes. Feel free to modify and expand it!
+
 ## Author
 
-John Friday-Akwawei
-
-## Student ID
-
-30005191
+John FA - 2025
