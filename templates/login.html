@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - JF Todolist App</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Mobile Responsive Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="/">{...}</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" 
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/signup">Signup</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Login Form -->
+    <div class="container mt-5">
+        <h2 class="text-center">Login to Your Account</h2>
+        <form id="loginForm" class="mt-4" method="POST" action="/login">
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" class="form-control" id="username" name="username" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" class="form-control" id="password" name="password" required>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Login</button>
+        </form>
+        <p class="text-center mt-3">Don't have an account?
+            <a href="/signup"> Signup here</a></p>
+        <p class="text-center mt-3"> <a href="/">Return to Home</a></p>
+
+        <!-- Error Messages -->
+        {% if error %}
+        <div class="alert alert-danger mt-3 text-center">
+            {{ error }}
+        </div>
+        {% endif %}
+
+    <!-- Footer -->
+    <footer class="footer bg-light text-center py-3 mt-5">
+        <div class="container">
+            <span class="text-muted">&copy; 2025 JF ToDoList App. <br>Made with ❤️ 
+                for my SEN 311 Mid Semester Lab Assessment.</span>
+        </div>
+    </footer>
+
+    <!-- Flash Messages -->
+    {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+    {% for category, message in messages %}
+        <div class="alert alert-{{ category }} mt-3 text-center">{{ message }}</div>
+    {% endfor %}
+    {% endif %}
+    {% endwith %}
+
+    <!-- jQuery, Popper.js, Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="/static/main.js"></script>
+</body>
+</html>
