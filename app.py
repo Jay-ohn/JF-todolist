@@ -50,7 +50,7 @@ def signup():
             cur.callproc('sp_createUser', [username, hashed_password])
             mysql.connection.commit()
             cur.close()
-            response = jsonify({'message': 'User registered successfully! Login to your account.'})
+            response = jsonify({'message': 'Registration Successful! Please Login to your Account.'})
             response.status_code = 200
             return response
         except Exception as e:
@@ -89,6 +89,7 @@ def login():
             # Verify the password and log the user in
             if user and check_password_hash(user['password'], password):
                 session['user_id'] = user['id']  # Store user ID in session
+                flash('Login Successful!', 'success')
                 return redirect('/dashboard')
             else:
                 # Invalid credentials
@@ -105,7 +106,7 @@ def login():
 def logout():
     # Remove user ID from the session
     session.pop('user_id')
-    flash('You have been logged out.', 'info')
+    flash('Logout Successful!', 'success')
     return redirect('/login')
 
 # Define the dashboard route (accessible only to logged-in users)
@@ -114,10 +115,10 @@ def dashboard():
     # Redirect unauthenticated users to the login page
     current_user_id = session.get('user_id')
     if not current_user_id:
-        flash('Please log in first.', 'danger')
+        flash('Please log in first!', 'danger')
         return redirect('/login')
 
-    # Render the dashboard page 
+    # Render the dashboard page
     return render_template('dashboard.html')
 
 # Run the Flask application in debug mode

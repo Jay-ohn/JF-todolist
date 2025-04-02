@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
             if (response.ok) {
                 // If response is successful, display success message
-                displayMessage('User registered successfully! Login to your account.', 'success');
+                displayMessage('Registration Successful! Please Login to your Account.', 'success');
                 signupForm.reset(); // Reset the form fields
             } else {
                 // If response is not successful, display error message
@@ -46,9 +46,9 @@ document.addEventListener('DOMContentLoaded', function() {
         messageDiv.textContent = message; // Set the message text
         signupForm.prepend(messageDiv); // Add the message to the top of the form
 
-        // Remove the message after 3 seconds
+        // Remove the message after 5 seconds
         setTimeout(() => {
             messageDiv.remove();
-        }, 3000);
+        }, 5000);
     }
 });
