@@ -2,7 +2,7 @@
 
 ## Project Overview
 
-**JF To-Do List App** is a simple web application built with Flask that allows users to manage their tasks efficiently. It includes features such as user authentication (signup, login, logout), a dashboard to view tasks, and a responsive design styled with Bootstrap. The app is designed to demonstrate the integration of Flask with MySQL, secure password handling, and dynamic web page rendering.
+**JF To-Do List App** is a simple web application built with Flask that allows users to manage their tasks efficiently. It includes features such as user authentication (signup, login, logout), a dashboard to view tasks, and a responsive design styled with Bootstrap. The app is designed to demonstrate the integration of Flask with MySQL.
 
 ---
 
@@ -13,6 +13,64 @@
 - Responsive design with Bootstrap
 - AJAX-based form submission validated using request.form for better user experience
 - MySQL database integration with stored procedures
+
+---
+
+## Installation and Setup
+
+### Prerequisites
+
+- Python 3.7 or higher
+- MySQL Server
+- A virtual environment (optional but recommended)
+
+### Steps to Set Up the Project
+
+1. **Clone the Repository**
+    ```bash
+    git clone https://github.com/your-repo/jf-todolist-app.git
+    cd jf-todolist-app
+    ```
+
+2. **Set Up a Virtual Environment**
+    ```bash
+    python -m venv venv
+    source venv/bin/activate  # On Windows: venv\Scripts\activate
+    ```
+
+3. **Install Dependencies**
+    Install the required Python packages using `pip`:
+    ```bash
+    pip install -r requirements.txt
+    ```
+    The `requirements.txt` file should include:
+    - Flask
+    - Flask-MySQLdb
+    - Werkzeug
+
+4. **Set Up the Database**
+    - Open the `mySQLdbsetup.sql` file and execute the SQL commands in your MySQL client to create the database and tables:
+      ```sql
+      CREATE DATABASE IF NOT EXISTS JF_todolist_app;
+      USE JF_todolist_app;
+      ```
+    - This script also creates a stored procedure `sp_createUser` for user registration.
+
+5. **Configure the Application**
+    - Update the MySQL credentials in `app.py`:
+      ```python
+      app.config['MYSQL_HOST'] = 'localhost'
+      app.config['MYSQL_USER'] = 'your_mysql_user'
+      app.config['MYSQL_PASSWORD'] = 'your_mysql_password'
+      app.config['MYSQL_DB'] = 'jf_todolist_app'
+      ```
+
+6. **Run the Application**
+    Start the Flask development server:
+    ```bash
+    python app.py
+    ```
+    The app will be available at `http://127.0.0.1:5000`.
 
 ---
 
@@ -73,7 +131,7 @@ JF-ToDoList-App/
 
 ## Notes
 
-- Ensure MySQL is running before launching the app. you can setup a local server using Xampp.
+- Ensure MySQL is running before launching the app. you can setup a local server for this using Xampp.
 - If you encounter database issues, verify the mySQLdbsetup.sql script was executed properly.
 
 ## License
