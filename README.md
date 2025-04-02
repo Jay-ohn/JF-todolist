@@ -1,89 +1,74 @@
-# JF ToDoList App
+# JF To-Do List App
 
-Project Overview
+## Features
 
-JF ToDoList App is a simple Flask-based web application that allows users to sign up and manage their tasks efficiently. The project demonstrates key web development concepts including form validation, AJAX-based form submission, MySQL database integration, password hashing, and stored procedures.
+- User authentication (Signup, Login, Logout)
+- Secure password storage using hashing
+- Responsive design with Bootstrap
+- AJAX-based form submission validated using request.form for better user experience
+- MySQL database integration with stored procedures
 
-Features
+---
 
-User signup with password hashing
+## Code Walkthrough
 
-AJAX-powered form submission without page reload
+### 1. **Flask Application Setup**
+    - The `app.py` file initializes the Flask app and configures MySQL integration using `Flask-MySQLdb`.
+    - Routes are defined for user authentication (`/signup`, `/login`, `/logout`), the dashboard (`/dashboard`), and the home page (`/`).
 
-MySQL database integration using Flask-MySQL
+### 2. **Database Integration**
+    - The MySQL database is used to store user credentials securely.
+    - A stored procedure `sp_createUser` ensures that usernames are unique and handles user registration.
 
-Server-side form validation with request.form
+### 3. **Secure Password Handling**
+    - Passwords are hashed using `generate_password_hash` from `Werkzeug` before storing them in the database.
+    - During login, `check_password_hash` is used to verify the password.
 
-Stored procedure for secure user registration
+### 4. **Frontend with Bootstrap**
+    - All HTML templates (`index.html`, `login.html`, `signup.html`, `dashboard.html`) are styled using Bootstrap for a responsive and modern UI.
+    - Navigation bars, forms, and buttons are built with Bootstrap components.
 
-Installation & Setup
+### 5. **AJAX for Signup**
+    - The `ajax.js` file handles the signup form submission using the Fetch API.
+    - It sends form data validated using request.form to the server asynchronously and displays success or error messages dynamically.
 
-Prerequisites
+### 6. **Dynamic Content with Jinja2**
+    - Jinja2 templates are used to render dynamic content, such as error messages and user-specific data.
+    - Flash messages are displayed for feedback on user actions.
 
-Ensure you have the following installed:
+---
 
-Python 3.x
+## Folder Structure
 
-MySQL Server
+```
+SEN_311/
+├── app.py                 # Main Flask application
+├── templates/             # HTML templates
+│   ├── index.html
+│   ├── login.html
+│   ├── signup.html
+│   ├── dashboard.html
+├── static/                # Static files (JS only)
+│   ├── main.js
+│   ├── ajax.js
+├── mySQLdbsetup.sql       # SQL script for database setup
+├── requirements.txt       # Python dependencies
+└── README.md              # Project documentation
+```
 
-Flask & required dependencies
+---
 
-Step 1: Clone the Repository
+## Future Enhancements
 
- git clone https://github.com/your-repo/jf-todolist.git
- cd jf-todolist
+- Add task management features (CRUD operations for tasks).
+- Implement user-specific task filtering and sorting.
 
-Step 2: Install Required Python Packages
+---
 
-Create a virtual environment (optional but recommended) and install dependencies:
+## Author
 
- python -m venv venv
- source venv/bin/activate  # On Windows use `venv\Scripts\activate`
- pip install -r requirements.txt
+John Friday-Akwawei
 
-Step 3: Set Up the Database
+## Student ID
 
-Start MySQL and create the database by running:
-
- mysql -u root -p < create_table.sql
-
-Update database credentials in app.py if needed.
-
-Step 4: Run the Flask App
-
- python app.py
-
-Go to http://localhost:5000/ to access the app.
-
-File Structure
-
-JF-ToDoList-App/
-│── app.py              # Flask backend
-│── create_table.sql    # Database schema setup
-│── templates/
-│   │── index.html      # Homepage
-│   │── signup.html     # Signup page
-│── static/
-│   │── css/
-│   │   │── style.css   # General styles
-│   │   │── signup.css  # Signup page styles
-│   │── js/
-│   │   │── signup.js   # AJAX handling
-│── README.md           # Project documentation
-
-Notes
-
-Ensure MySQL is running before launching the app.
-
-Use Developer Tools (F12) to debug AJAX requests if needed.
-
-If you encounter database issues, verify the create_table.sql script was executed properly.
-
-License
-
-This project is for educational purposes. Feel free to modify and expand it!
-
-Author
-
-Your Name - 2025
-
+30005191
