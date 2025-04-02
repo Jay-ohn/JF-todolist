@@ -117,7 +117,7 @@ def dashboard():
         flash('Please log in first.', 'danger')
         return redirect('/login')
 
-    # Render the dashboard page
+    # Render the dashboard page 
     return render_template('dashboard.html')
 
 # Run the Flask application in debug mode
