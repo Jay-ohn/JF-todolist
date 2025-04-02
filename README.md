@@ -1,4 +1,4 @@
-# JF ToDoList
+# JF-TodoList
 
 ## Project Overview
 
@@ -105,7 +105,7 @@ T'is a simple web application built with Flask that allows users to manage their
 ## Folder Structure
 
 ```
-JF-ToDoList/
+JF-TodoList/
 ├── app.py                 # Main Flask application
 ├── templates/             # HTML templates
 │   ├── index.html
