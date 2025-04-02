@@ -51,8 +51,8 @@
 4. **Set Up the Database**
     - Open the `mySQLdbsetup.sql` file and execute the SQL commands in your MySQL client to create the database and tables:
       ```sql
-      CREATE DATABASE IF NOT EXISTS JF_todolist_app;
-      USE JF_todolist_app;
+      CREATE DATABASE IF NOT EXISTS JF_todolist_db;
+      USE JF_todolist_db;
       ```
     - This script also creates a stored procedure `sp_createUser` for user registration.
 
@@ -62,7 +62,7 @@
       app.config['MYSQL_HOST'] = 'localhost'
       app.config['MYSQL_USER'] = 'your_mysql_user'
       app.config['MYSQL_PASSWORD'] = 'your_mysql_password'
-      app.config['MYSQL_DB'] = 'jf_todolist_app'
+      app.config['MYSQL_DB'] = 'jf_todolist_db'
       ```
 
 6. **Run the Application**

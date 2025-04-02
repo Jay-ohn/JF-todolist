@@ -1,8 +1,8 @@
 -- Create database
-CREATE DATABASE IF NOT EXISTS JF_todolist_app;
+CREATE DATABASE IF NOT EXISTS JF_todolist_db;
 
 -- Use the created database
-USE JF_todolist_app;
+USE JF_todolist_db;
 
 -- Create tbl_user table
 CREATE TABLE IF NOT EXISTS tbl_user (

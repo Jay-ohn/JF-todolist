@@ -17,7 +17,7 @@ def home():
 app.config['MYSQL_HOST'] = 'localhost'
 app.config['MYSQL_USER'] = 'root'
 app.config['MYSQL_PASSWORD'] = ''
-app.config['MYSQL_DB'] = 'jf_todolist_app'
+app.config['MYSQL_DB'] = 'jf_todolist_db'
 app.config['MYSQL_CURSORCLASS'] = 'DictCursor'
 
 # Initialize MySQL connection
