@@ -24,7 +24,7 @@ app.config['MYSQL_CURSORCLASS'] = 'DictCursor'
 mysql = MySQL(app)
 
 # Define the signup route (handles user registration)
-@app.route('/signup', methods=['GET', 'POST'])
+@app.route('/signup', methods=['POST'])
 def signup():
     # Redirect logged-in users to the dashboard
     current_user_id = session.get('user_id')
@@ -63,7 +63,7 @@ def signup():
     return render_template('signup.html')
 
 # Define the login route (handles user authentication)
-@app.route('/login', methods=['GET', 'POST'])
+@app.route('/login', methods=['POST'])
 def login():
     
     # Redirect logged-in users to the dashboard
