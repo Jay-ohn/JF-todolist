@@ -1,8 +1,8 @@
-# JF To-Do List
+# JF ToDoList
 
 ## Project Overview
 
-**JF To-Do List** is a simple web application built with Flask that allows users to manage their tasks efficiently. It includes features such as user authentication (signup, login, logout), a dashboard to view tasks, and a responsive design styled with Bootstrap. The app is designed to demonstrate the integration of Flask with MySQL.
+**JF ToDoList** is a simple web application built with Flask that allows users to manage their tasks efficiently. It includes features such as user authentication (signup, login, logout), a dashboard to view tasks, and a responsive design styled with Bootstrap. The app is designed to demonstrate the integration of Flask with MySQL.
 
 ---
 
